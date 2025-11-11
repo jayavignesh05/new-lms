@@ -1,0 +1,296 @@
+.profile-page-wrapper {
+  background-color: #f4f7f6; /* Minimalist light background */
+  color: #333; /* Dark text for readability */
+  padding: 30px;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+}
+
+.profile-grid-container {
+  display: grid;
+  grid-template-columns: 0.9fr 2.9fr; /* Reduced left column width */
+  gap: 24px;
+  align-items: start;
+}
+
+.left-column,
+.right-column {
+  display: grid;
+  gap: 24px;
+ 
+}
+
+.grid-card {
+  position: relative; /* This is crucial for positioning the icon */
+  background-color: #ffffff; /* White cards */
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* Softer shadow */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out,
+    filter 0.3s ease-in-out;
+}
+
+.edit-icon {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #aaa;
+  transition: color 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.edit-icon:hover {
+  color: #333;
+}
+
+/* Left Column Styles */
+.profile-pic-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0; /* No padding for image card */
+  overflow: hidden; /* To contain the image */
+}
+
+.profile-pic {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  height: 100%;
+  padding: 8px; /* Padding on the container, not the image */
+  box-sizing: border-box; /* Ensures padding is included in the element's total width and height */
+}
+
+.profile-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the container without distortion */
+  border-radius: 10px; /* Makes the image circular */
+}
+
+.contact-card h3,
+.education-card h3 {
+  margin-top: 0;
+  border-bottom: 1px solid #eee; /* Lighter border */
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+  color: #666; /* Softer text color */
+}
+
+/* Right Column Styles */
+.header-card {
+  padding: 30px 24px;
+}
+
+.header-card h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+.header-card p {
+  font-size: 1.2rem;
+  color: #666;
+  margin: 5px 0 0;
+}
+
+.profile-summary-card h3,
+.experience-card h3 {
+  margin-top: 0;
+  border-bottom: 1px solid #eee; /* Lighter border */
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.profile-summary-card p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Address List Styles */
+.address-list {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.address-list-title {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.address-item {
+ 
+
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.address-item:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.address-item strong {
+  color: #333;
+  font-size: 0.95rem;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Loading/Error Message Styles */
+.loading-error-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 1.5rem;
+  color: #333;
+  background-color: #f4f7f6;
+}
+.loading-error-message.error {
+  color: #d9534f;
+}
+
+/* Edit Form Styles */
+.form-group {
+  margin-bottom: 15px;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #555;
+}
+.form-control {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.edit-controls {
+  display: flex;
+  gap: 10px;
+
+}
+.edit-controls button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: white;
+  color: #000000;
+  border: 1px solid #000000;
+  padding: 5px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+
+.header-actions {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.edit-profile-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: white;
+  color: #000000;
+  border: 1px solid #000000;
+  padding: 5px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+
+
+.form-control, select.form-control {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.form-divider {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 20px 0;
+}
+
+.address-edit-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.address-edit-header h4 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.add-address-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.address-form-group {
+  border: 1px dashed #ccc;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0 15px; /* Vertical gap 0, horizontal gap 15px */
+}
+
+.remove-address-btn {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #dc3545;
+  cursor: pointer;
+}
+.profile-page-wrapper.editing-active .grid-card {
+  filter: blur(4px);
+  pointer-events: none;
+}
+
+.profile-page-wrapper.editing-active .grid-card.is-editing  {
+  filter: none;
+  pointer-events: auto;
+  transform: scale(1.02);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  transform-origin: center;
+  z-index: 10;
+}

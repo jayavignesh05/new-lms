@@ -1,0 +1,57 @@
+.tab-switcher {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+}
+
+.tab-button {
+  background: none;
+  border: none;
+  padding: 15px 20px;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #ffffff;
+  cursor: pointer;
+  transition: color 0.3s ease, border-color 0.3s ease;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  border-bottom: 2px solid transparent;
+}
+
+.tab-button:hover {
+  color: #fa0202;
+}
+
+.tab-button.active {
+  color: #fa0202;
+}
+
+.tab-button.active::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #e53935;
+  animation: slideIn 0.3s forwards;
+}
+
+@keyframes slideIn {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.register-content {
+  /* Set a fixed height. Adjust this value as needed. */
+  max-height: 250px; 
+  overflow-y: auto;
+  padding-right: 15px; /* Add some padding to prevent scrollbar from overlapping content */
+}

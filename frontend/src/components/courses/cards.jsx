@@ -12,6 +12,7 @@ const Cards = () => {
   const [error, setError] = useState(null);
 
   const base_api = "http://localhost:7000/api";
+  
   const token = localStorage.getItem("token");
 
   useEffect(() => {
@@ -132,7 +133,7 @@ const SingleCourseCard = ({ course, base_api }) => {
           </span>
         </div>
         <div className="card-bodys">
-          <h3 className="course-title">{course.courses_name}</h3>
+          <h3 className="course-title-1">{course.courses_name}</h3>
           <div className="date-row">
             <span>Start: {formatDate(course.start_date)}</span>
             <span>End: {formatDate(course.end_date)}</span>

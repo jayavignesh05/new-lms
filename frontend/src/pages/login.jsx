@@ -35,7 +35,7 @@ function Login() {
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
-      navigate("/home"); 
+      navigate("/home");
     }
   }, [navigate]);
 
@@ -51,6 +51,8 @@ function Login() {
       const data = response.data;
 
       localStorage.setItem("token", data.token);
+      const fullName = `${data.user.first_name} ${data.user.last_name}`;
+      localStorage.setItem("userName", fullName);
       setEmail("");
       setPassword("");
       navigate("/home");

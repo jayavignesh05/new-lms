@@ -62,11 +62,8 @@ export default function Sidebar({ isSidebarOpen, toggleSidebar }) {
                 <NavLink
                   className={({ isActive }) => {
                     let finalIsActive = isActive;
-                    if (
-                      item.route === "home" &&
-                      (location.pathname === "/" ||
-                        location.pathname.startsWith("/my-courses"))
-                    ) {
+                    // Make "My Courses" active for both "/" and "/home"
+                    if (item.name === "My Courses" && (location.pathname === "/" || location.pathname === "/home")) {
                       finalIsActive = true;
                     }
                     if (

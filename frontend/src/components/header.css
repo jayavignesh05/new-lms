@@ -1,28 +1,117 @@
-.profile-dropdown {
-  position: absolute;
-  top: 120%;
-  right: 0;
-  width: 180px;
-  background-color: white;
-  border: 1px solid #ddd;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  z-index: 1000;
-  padding: 8px;
+/* Main Header Container */
+.app-header {
+  background-color: #ffffff;
+  padding: 10px 24px;
+  border-bottom: 1px solid #e2e8f0;
   display: flex;
-  flex-direction: column;
-  gap: 2px; 
+  justify-content: flex-end; /* Aligns content to the right */
+  align-items: center;
+  height: 65px; /* Fixed height */
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-.dropdown-items{
-  padding: 10px ;
+/* New container for profile name, icon, and dropdown */
+.profile-container {
+  position: relative; /* Needed for the absolute dropdown */
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Root element for profile section */
+.header-root {
+  display: flex;
+  align-items: center;
+  gap: 16px; /* Space between name and icon */
+}
+
+/* User's name */
+.profile-name {
+  font-weight: 600;
+  color: #1e293b;
+  font-size: 15px;
+}
+
+/* Profile icon/image container */
+.profile-icon {
+  position: relative;
   cursor: pointer;
+}
+
+/* Styles for the profile picture image */
+.header-profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #f1f5f9;
+  transition: transform 0.2s ease;
+}
+
+.header-profile-pic:hover {
+  transform: scale(1.05);
+}
+
+/* Fallback icon when no image is present */
+.profile-icon svg {
+  color: #475569;
+  width: 35px;
+  height: 35px;
+}
+
+/* Dropdown menu */
+.profile-dropdown {
+  position: absolute;
+  top: 40px; /* Position below the icon with a gap */
+  right: 0;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f1f5f9;
+  width: 180px;
+  z-index: 110;
+  overflow: hidden;
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* Animation for dropdown */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Items inside the dropdown (links/buttons) */
+.dropdown-items {
+  display: block;
+  padding: 12px 16px;
+  font-size: 14px;
+  color: #334155;
   text-decoration: none;
-  color: #333;
-  border-radius: 4px;
-  transition: background-color 0.2s ease;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  border-bottom: 1px solid #f8fafc;
+}
+
+.dropdown-items:last-child {
+  border-bottom: none;
 }
 
 .dropdown-items:hover {
-  background-color: #f5f5f5;
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+/* Specific style for the logout button */
+.dropdown-items:last-child:hover {
+  background-color: #fee2e2; /* Light red on hover */
+  color: #b91c1c; /* Darker red text */
 }

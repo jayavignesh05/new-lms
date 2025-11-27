@@ -1,5 +1,6 @@
 import React from "react";
 import { FaTimes } from "react-icons/fa";
+import { FaCircleCheck } from "react-icons/fa6";
 import "./paymentoverlay.css";
 
 const PaymentOverlay = ({
@@ -44,7 +45,14 @@ const PaymentOverlay = ({
           </div>
         </div>
         <div className="payment-modal-footer">
-          <button className="pay-btn">Pay Now</button>
+          {Number(dueAmount) > 0 ? (
+            <button className="pay-btn">Pay Now</button>
+          ) : (
+            <button className="paid-btn" disabled>
+              <FaCircleCheck size={18} />
+              <span>Fully Paid</span>
+            </button>
+          )}
         </div>
 
       </div>

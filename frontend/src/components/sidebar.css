@@ -38,7 +38,7 @@
 }
 
 .sidebar-link.active {
-  background-color: rgba(255, 0, 0, 0.7);
+  background-color: #852a9e;
   color: #ffffff;
   font-weight: 500;
 }

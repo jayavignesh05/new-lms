@@ -5,7 +5,7 @@
   padding: 40px 20px;
   background-color: #f8fafc;
   min-height: 100vh;
-  font-family: Arial, sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 .course-grid {
@@ -160,11 +160,12 @@
   padding: 16px 24px;
   border-top: 1px solid #f1f5f9;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* space-around ku pathil space-between nalla irukum */
   align-items: center;
   background-color: white;
 }
 
+/* பொதுவான பட்டன் ஸ்டைல் */
 .footer-button {
   width: 120px;
   padding: 8px 16px;
@@ -173,12 +174,22 @@
   font-weight: 600;
   border: none;
   cursor: pointer;
-  transition: all 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
+  
+  /* Animation Transition */
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
 }
 
+/* --- HOVER EFFECT (ரெண்டுக்கும் பொதுவானது) --- */
+.footer-button:hover {
+  transform: translateY(-3px); /* மேலே எழும்பும் */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* நிழல் வரும் */
+  filter: brightness(0.95); /* கலரை கொஞ்சம் டல்லாக்கும் (Focus காக) */
+}
+
+/* View Course பட்டனுக்கு மட்டும் தனி டிசைன் */
 .footer-button:last-child {
   background-color: transparent;
   color: #3b82f6;
@@ -186,10 +197,10 @@
 }
 
 .footer-button:last-child:hover {
-  background-color: #eff6ff;
+  background-color: #eff6ff; /* லைட் ப்ளூ */
   border-color: #3b82f6;
+  /* transform & box-shadow மேலே உள்ள பொதுவான ரூல் மூலம் வரும் */
 }
-
 .detail-header {
   background: white;
   padding: 30px;

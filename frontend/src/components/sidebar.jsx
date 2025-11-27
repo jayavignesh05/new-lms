@@ -3,11 +3,10 @@ import axios from "axios";
 import { NavLink, useLocation } from "react-router-dom";
 import "./sidebar.css";
 import caddCentreLogo from "../assets/caddcentre.svg";
-import { FiMenu } from "react-icons/fi";
 import { VscHome } from "react-icons/vsc";
 import { LuGraduationCap } from "react-icons/lu";
 import { BsPerson, BsTelephone, BsSuitcaseLg } from "react-icons/bs";
-import { MdOutlinePrivacyTip } from "react-icons/md";
+import { MdOutlinePrivacyTip, MdScience } from "react-icons/md";
 
 export default function Sidebar({ isSidebarOpen, toggleSidebar }) {
   const [appVersion, setAppVersion] = useState([]);
@@ -19,7 +18,12 @@ export default function Sidebar({ isSidebarOpen, toggleSidebar }) {
         const response = await axios.get(
           "http://localhost:7000/api/side/sidebar"
         );
-        setAppVersion(response.data);
+        // Add the new "Test" item to the list from the API
+        const updatedNavItems = [
+          ...response.data,
+          { id: 99, name: "Test", route: "test" },
+        ];
+        setAppVersion(updatedNavItems);
       } catch (error) {
         console.error("Failed to fetch sidebar data:", error);
       }
@@ -41,6 +45,8 @@ export default function Sidebar({ isSidebarOpen, toggleSidebar }) {
       return <MdOutlinePrivacyTip size={24} />;
     } else if (name === "Jobs") {
       return <BsSuitcaseLg size={24} />;
+    } else if (name === "Test") {
+      return <MdScience size={24} />;
     }
     return null;
   };

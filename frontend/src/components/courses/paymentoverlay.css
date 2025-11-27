@@ -162,6 +162,25 @@
   transform: translateY(0);
 }
 
+/* --- 7. Paid Button --- */
+.paid-btn {
+  width: 100%;
+  padding: 14px;
+  background-color: #16a34a; /* Green */
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: not-allowed; /* Indicates it's not clickable */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* Space between icon and text */
+  opacity: 0.9; /* Slightly faded since it's a status */
+}
+
+
 /* --- Animations --- */
 @keyframes fadeIn {
   from { opacity: 0; }

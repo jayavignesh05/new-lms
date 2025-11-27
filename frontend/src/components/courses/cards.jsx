@@ -109,11 +109,9 @@ const SingleCourseCard = ({ course, base_api }) => {
 
   const progress = calculateProgress(course.start_date, course.end_date);
 
-  // Open overlay only if amount is due
-  const handleDueClick = () => {
-    if (Number(course.pending_amount) > 0) {
-      setShowPayment(true);
-    }
+  // Open overlay to show payment status
+  const handlePaymentStatusClick = () => {
+    setShowPayment(true);
   };
 
   return (
@@ -159,7 +157,7 @@ const SingleCourseCard = ({ course, base_api }) => {
                 Number(course.pending_amount) > 0 ? "#fee2e2" : "#dcfce7",
               color: Number(course.pending_amount) > 0 ? "#dc2626" : "#16a34a",
             }}
-            onClick={handleDueClick} // Attach the click handler
+            onClick={handlePaymentStatusClick} 
           >
             {Number(course.pending_amount) > 0 ? "Due" : "Paid"}
           </button>

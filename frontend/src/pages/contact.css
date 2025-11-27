@@ -18,7 +18,7 @@ body {
 }
 
 .contact-header h1 {
-  color: #e53935;
+  color: #852a9e;
   font-size: 2.5rem;
 }
 
@@ -52,7 +52,7 @@ body {
 }
 
 .contact-info-card .card-icon {
-  background-color: #e53935;
+  background-color: #852a9e;
   color: #ffffff;
   width: 45px;
   height: 45px;
@@ -66,7 +66,7 @@ body {
 }
 
 .contact-info-card:hover .card-icon {
-  background-color: #c62828;
+  background-color: #852a9e;
 }
 
 .contact-info-card .card-text h3 {
@@ -110,7 +110,7 @@ body {
   padding: 12px;
   border: 1px solid #ced4da;
   border-radius: 8px;
-  font-family: "Poppins", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 1rem;
   box-sizing: border-box;
 }

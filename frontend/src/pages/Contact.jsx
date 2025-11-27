@@ -14,65 +14,31 @@ function Contact() {
       </header>
 
       <section className="contact-info-section">
-        <div className="contact-info-card">
-          <div className="card-icon">
-            <IoCallOutline />
-          </div>
-          <div className="card-text">
-            <h3>Phone</h3>
-            <p>+91 98765 43210</p>
-          </div>
-        </div>
-        <div className="contact-info-card">
-          <div className="card-icon">
-            <MdOutlineEmail />
-          </div>
-          <div className="card-text">
-            <h3>Email</h3>
-            <p>support@caddcentre.com</p>
-          </div>
-        </div>
-      </section>
-
-      <section className="message-form-section">
-        <h2>Send Us a Message</h2>
-        <form>
-          <div className="form-row">
-            <div className="input-group">
-              <label htmlFor="name">Name</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Your Name"
-              />
+        <div className="w-50 flex flex-column gap-3">
+          <div className="contact-info-card">
+            <div className="card-icon">
+              <IoCallOutline />
             </div>
-            <div className="input-group">
-              <label htmlFor="email">Email</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Your Email"
-              />
+            <div className="card-text">
+              <h3>Phone</h3>
+              <p>+91 98765 43210</p>
             </div>
           </div>
-          <div className="input-group">
-            <label htmlFor="message">Message</label>
-            <textarea
-              id="message"
-              name="message"
-              placeholder="How can we help you?"
-            ></textarea>
+          <div className="contact-info-card">
+            <div className="card-icon">
+              <MdOutlineEmail />
+            </div>
+            <div className="card-text">
+              <h3>Email</h3>
+              <p>support@caddcentre.com</p>
+            </div>
           </div>
-          <button
-            type="submit"
-            onClick={(e) => e.preventDefault()}
-            className="form-submit-btn"
-          >
-            Submit
-          </button>
-        </form>
+        </div>
+        <div className="w-50">
+          <div className="flex justify-center">
+            <img src="/contactus.jpg" alt="Contact Us" className="w-50 h-50" />
+          </div>
+        </div>
       </section>
     </div>
   );

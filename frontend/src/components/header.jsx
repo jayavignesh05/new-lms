@@ -17,7 +17,7 @@ export default function Header({ profilePic }) {
 
   const handleLogout = () => {
     localStorage.clear();
-    navigate("/login");
+    navigate("/");
   };
 
   const closeBox = () => {

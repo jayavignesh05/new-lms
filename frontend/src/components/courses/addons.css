@@ -30,7 +30,7 @@
 }
 
 .tab-btn.active {
-  color: #2563eb; /* Primary Blue */
+  color: #852a9e; /* Primary Blue */
 }
 
 .tab-btn.active::after {
@@ -40,7 +40,7 @@
   left: 0;
   width: 100%;
   height: 3px;
-  background-color: #2563eb;
+  background-color: #852a9e;
   border-radius: 3px 3px 0 0;
 }
 
@@ -134,7 +134,7 @@
 }
 .option-label.selected {
   background-color: #eff6ff;
-  border-color: #3b82f6;
+  border-color: #852a9e;
 }
 
 .option-label input {
@@ -155,7 +155,7 @@
 }
 
 .option-label.selected .opt-circle {
-  background: #3b82f6;
+  background: #852a9e;
   color: white;
 }
 
@@ -192,11 +192,11 @@
 }
 
 .next-btn {
-  background-color: #2563eb;
+  background-color: #852a9e;
   color: white;
 }
 .next-btn:hover {
-  background-color: #1d4ed8;
+  background-color: #852a9e;
 }
 
 .submit-btn {
@@ -273,7 +273,7 @@
 
 .file-list-item.active {
   background-color: #fff;
-  border-left: 4px solid #2563eb;
+  border-left: 4px solid #852a9e;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
@@ -342,8 +342,8 @@
   background: rgba(255, 255, 255, 0.25);
 }
 .pdf-btn.active-btn {
-  background: #2563eb;
-  border-color: #2563eb;
+  background: #852a9e;
+  border-color: #852a9e;
 }
 
 .pdf-divider {
@@ -508,14 +508,14 @@
 
 .play-btn-right {
   font-size: 32px;
-  color: #3b82f6;
+  color: #852a9e;
   padding: 0 15px;
   transition: transform 0.2s;
 }
 
 .video-row-card:hover .play-btn-right {
   transform: scale(1.1);
-  color: #2563eb;
+  color: #852a9e;
 }
 
 /* Interactive (Quiz/Feedback) Card Specifics */
@@ -720,7 +720,7 @@
   padding: 40px;
   position: relative;
   box-sizing: border-box;
-  font-family: 'Helvetica', sans-serif;
+  font-family: "Inter", sans-serif;
   text-align: center;
   color: #1e293b;
   border: 1px solid #ddd; /* Temporary border to see if rendering */
@@ -784,4 +784,89 @@
 
 @media (max-width: 600px) {
   .cert-action { width: 100%; justify-content: center; margin-top: 15px; }
+}
+
+/* --- Video Modal Overlay --- */
+.video-modal-overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.9); /* Darker background */
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+}
+
+.video-modal-content {
+  background-color: #1a1a1a;
+  color: white;
+  width: 95%;
+  max-width: 900px; /* Increased width for buttons */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Player Container (Holds Buttons + Video) --- */
+.player-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: black;
+  position: relative;
+}
+
+/* Video Wrapper */
+.video-wrapper {
+  flex-grow: 1; /* Video takes max space */
+  max-width: 100%;
+}
+
+/* --- Navigation Buttons (Left & Right) --- */
+.vid-nav-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0 20px;
+  height: 450px; /* Match video height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s, color 0.3s;
+  z-index: 10;
+}
+
+.vid-nav-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #3b82f6; /* Blue hover */
+}
+
+.vid-nav-btn.disabled {
+  color: #444;
+  cursor: not-allowed;
+}
+
+.vid-nav-btn.disabled:hover {
+  background-color: transparent;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+  .vid-nav-btn {
+    position: absolute; /* Overlay on video for mobile */
+    height: 50px;
+    width: 40px;
+    background: rgba(0,0,0,0.5);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0;
+  }
+  .vid-nav-btn.prev { left: 10px; }
+  .vid-nav-btn.next { right: 10px; }
 }

@@ -343,7 +343,7 @@
   cursor: pointer;
 }
 .profile-page-wrapper.editing-active .grid-card {
-  filter: blur(4px);
+  filter: blur(1px);
   pointer-events: none;
 }
 
@@ -465,4 +465,95 @@
   display: flex;
   align-items: center;
   gap:20px;
+}
+/* --- RESPONSIVE MEDIA QUERIES --- */
+
+/* Tablet & Smaller Laptops (Max Width: 1024px) */
+@media (max-width: 1024px) {
+  .profile-page-wrapper {
+    padding: 20px;
+  }
+
+  .profile-grid-container {
+    grid-template-columns: 1fr 2fr; /* Adjust ratio for tablets */
+    gap: 20px;
+  }
+}
+
+/* Mobile Devices (Max Width: 768px) */
+@media (max-width: 768px) {
+  .profile-page-wrapper {
+    padding: 15px;
+  }
+
+  .profile-grid-container {
+    grid-template-columns: 1fr; /* Stack columns vertically */
+    gap: 20px;
+  }
+
+  /* Reorder if needed: Make Profile Pic appear first */
+  .left-column {
+    order: 1; 
+  }
+  
+  /* Make sure right column comes after left column */
+  .right-column {
+    order: 2;
+  }
+
+  /* Adjust Header Font Size */
+  .header-card h1 {
+    font-size: 1.8rem;
+  }
+
+  .current-status {
+    font-size: 0.8rem;
+    padding: 3px 8px;
+  }
+
+  /* Stack Name and Status vertically on very small screens */
+  .name-status-line {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  /* Form Layout Adjustments */
+  .address-form-group {
+    grid-template-columns: 1fr; /* Single column forms on mobile */
+  }
+
+  /* Edit Controls */
+  .edit-controls {
+    flex-wrap: wrap;
+  }
+  
+  .edit-controls button {
+    flex: 1; /* Buttons take full width */
+    justify-content: center;
+  }
+
+  /* Hide edit icons on mobile unless hovered/active */
+  .grid-card:hover .edit-icon {
+    display: flex;
+  }
+}
+
+/* Small Mobile Devices (Max Width: 480px) */
+@media (max-width: 480px) {
+  .header-card {
+    padding: 20px 15px;
+  }
+
+  .header-card h1 {
+    font-size: 1.5rem;
+  }
+
+  .grid-card {
+    padding: 15px;
+  }
+
+  .profile-pic {
+    max-width: 200px; /* Limit profile pic size on small screens */
+    margin: 0 auto; /* Center it */
+  }
 }

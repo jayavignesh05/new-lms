@@ -1,0 +1,567 @@
+
+{
+    "marks": 1,
+    "status": 2,
+    "preview": [
+        {
+            "id": 17870,
+            "course_concept_level_question_banks": {
+                "id": 6107,
+                "name": "A project is in the planning phase and requires tremendous time and effort for data collection and analysis. Due to time constraints, the project sponsor asks the project manager to skip a planned focus group discussion and brainstorming sessions in an effort to accelerate the process. What should the project manager do next?",
+                "course_concept_level_question_bank_options": [
+                    {
+                        "id": 21060,
+                        "name": "Explain to the project sponsor that the planned project activities cannot be skipped because it will jeopardize the project outcomes."
+                    },
+                    {
+                        "id": 21240,
+                        "name": "Report the issue to the project steering committee and seek their support to manage the project sponsor's expectations."
+                    },
+                    {
+                        "id": 21422,
+                        "name": "Acknowledge the project sponsor's request and follow their advice since they are the expert."
+                    },
+                    {
+                        "id": 21602,
+                        "name": "Meet with the key stakeholders to evaluate and determine alternative solutions to make an informed project decision."
+                    }
+                ],
+                "justification": "As a project manager, you are responsible for the project deliverable and informed business decisions are made based on the data collection and analysis for the project success."
+            },
+            "correct_answer": 21602,
+            "given_answer": 21422
+        },
+        {
+            "id": 17871,
+            "course_concept_level_question_banks": {
+                "id": 6099,
+                "name": "A global, cross-functional team has been assembled to deliver a multinational initiative. What should the project manager do to ensure that there is full team participation throughout the project?",
+                "course_concept_level_question_bank_options": [
+                    {
+                        "id": 21051,
+                        "name": "Coordinate time zone information and agree to meeting times."
+                    },
+                    {
+                        "id": 21232,
+                        "name": "Ensure software is delivered in multiple languages."
+                    },
+                    {
+                        "id": 21413,
+                        "name": "Translate the project documentation."
+                    },
+                    {
+                        "id": 21591,
+                        "name": "Provide guidance on common tools and practices."
+                    }
+                ],
+                "justification": "The project manager must be sensitive to the needs of the virtual team. Specifically, understanding time zone and culture (global calendars) differences will be key to the project's success. Having the team agree to specific meeting times that fit a global calendar will help to ensure team participation throughout the project. Th other answer choices are incorrect. The main focus of this question is about participation. Translating the project documentation and final software does not ensure the team will participate because we cannot assume that the software is intended for a global audience; they all work for the same company so they already have shared tools and common practices."
+            },
+            "correct_answer": 21051,
+            "given_answer": 21591
+        },
+        {
+            "id": 17872,
+            "course_concept_level_question_banks": {
+                "id": 6158,
+                "name": "A Chief Technology Officer (CTO) is excited that the company is using servant leadership practices on a current project. The CTO requests that all project managers apply servant leadership practices to all their projects. Which statement below best represents how the project manager should respond to the CTO's request?",
+                "course_concept_level_question_bank_options": [
+                    {
+                        "id": 21110,
+                        "name": "Servant leadership can be applied to any project situation."
+                    },
+                    {
+                        "id": 21290,
+                        "name": "Servant leadership is more suited for projects using agile methods."
+                    },
+                    {
+                        "id": 21470,
+                        "name": "Servant leadership practices focus on the client."
+                    },
+                    {
+                        "id": 21648,
+                        "name": "Servant leadership only works for projects with substantial financial impact."
+                    }
+                ],
+                "justification": "Servant leadership can be applied to any project situation. Servant leadership is the practice of leading the team by focusing on understanding and addressing the needs and development of team members in order to enable the highest possible team performance. While some approaches may rely on servant leadership more than others, servant leadership principles can be applied to any situation. Servant leadership is not client focused and is not applied only to projects with substantial financial impact."
+            },
+            "correct_answer": 21110,
+            "given_answer": null
+        },
+        {
+            "id": 17873,
+            "course_concept_level_question_banks": {
+                "id": 6154,
+                "name": "n a review meeting, the team detects a misunderstanding about one critical deliverable. What should the project manager do to resolve this misunderstanding?",
+                "course_concept_level_question_bank_options": [
+                    {
+                        "id": 21106,
+                        "name": "Ask the team to discuss the issue and reach a consensus."
+                    },
+                    {
+                        "id": 21287,
+                        "name": "Ask the customer to clarify the deliverable."
+                    },
+                    {
+                        "id": 21467,
+                        "name": "Ask the product owner to clarify the deliverable."
+                    },
+                    {
+                        "id": 21647,
+                        "name": "Ask the sponsor to clarify the deliverable."
+                    }
+                ],
+                "justification": "eam consensus on the misunderstanding of the deliverable is needed to proceed to the appropriate solution PMBoK Chapter 5 and 8 state: Project life cycles can range along a continuum from predictive approaches at one end to adaptive or agile approaches at the other. In a predictive life cycle, the project deliverables are defined at the beginning of the project and any changes to the scope are progressively managed. In an adaptive or agile life cycle, the deliverables are developed over multiple iterations where a detailed scope is defined and approved for each iteration when it begins. 5.5 VALIDATE SCOPE Validate Scope is the process of formalizing acceptance of the completed project deliverables. The key benefit of this process is that it brings objectivity to the acceptance process and increases the probability of final product, service, or result acceptance by validating each deliverable. This process is performed periodically throughout the project as needed. 5.5.1.3 VERIFIED DELIVERABLES Verified deliverables are project deliverables that are completed and checked for correctness through the Control Quality process. 5.7 CONTROL QUALITY Control Quality is the process of monitoring and recording results of executing the quality management activities to assess performance and ensure the project outputs are complete, correct, and meet customer expectations. The key benefit of this process is verifying that project deliverables and work meet the requirements specified by key stakeholders for final acceptance. This process is performed throughout the project 8.3 CONTROL QUALITY Control Quality is the process of monitoring and recording results of executing the quality management activities in order to assess performance and ensure the project outputs are complete, correct, and meet customer expectations. The key benefit of this process is verifying that project deliverables and work meet the requirements specified by key stakeholders for final acceptance. The Control Quality process determines if the project outputs do what they were intended to do. Those outputs need to comply with all applicable standards, requirements, regulations, and specifications. This process is performed throughout the project. CONSIDERATIONS FOR AGILE/ADAPTIVE ENVIRONMENTS In order to navigate changes, agile methods call for frequent quality and review steps built in throughout the project rather than toward the end of the project. Recurring retrospectives regularly check on the effectiveness of the quality processes. They look for the root cause of issues then suggest trials of new approaches to improve quality. Subsequent retrospectives evaluate any trial processes to determine if they are working and should be continued or new adjusting or should be dropped from use. In order to facilitate frequent, incremental delivery, agile methods focus on small batches of work, incorporating as many elements of project deliverables as possible. Small batch systems aim to uncover inconsistencies and quality issues earlier in the project life cycle when the overall costs of change are lower"
+            },
+            "correct_answer": 21106,
+            "given_answer": null
+        },
+        {
+            "id": 17874,
+            "course_concept_level_question_banks": {
+                "id": 6043,
+                "name": "In the middle of project execution, the main project sponsor leaves and a new sponsor is assigned. The new sponsor is requesting major revisions to the deliverables. What should the project manager do? ",
+                "course_concept_level_question_bank_options": [
+                    {
+                        "id": 20997,
+                        "name": "Implement all the changes to the deliverables."
+                    },
+                    {
+                        "id": 21177,
+                        "name": "Request additional resources to adjust the deliverables."
+                    },
+                    {
+                        "id": 21356,
+                        "name": "Evaluate the possible impacts of the changes."
+                    },
+                    {
+                        "id": 21537,
+                        "name": "Extend the project timeline to include the changes."
+                    }
+                ],
+                "justification": "Before implementing any change, the project manager should evaluate its possible impact. The other answer choices are incorrect because they suggest that the project manager implement the change and alter the project without first assessing the situation. This questi"
+            },
+            "correct_answer": 21356,
+            "given_answer": null
+        },
+        {
+            "id": 17875,
+            "course_concept_level_question_banks": {
+                "id": 6114,
+                "name": "A large-scale project has been consistently progressing. However, the team recently ran into difficulties completing some complex stories and maintaining velocity. What should the project manager do to enhance the team's performance?",
+                "course_concept_level_question_bank_options": [
+                    {
+                        "id": 21066,
+                        "name": "Focus on servant leadership."
+                    },
+                    {
+                        "id": 21247,
+                        "name": "Perform a root cause analysis."
+                    },
+                    {
+                        "id": 21431,
+                        "name": "Seek insight from a mentor."
+                    },
+                    {
+                        "id": 21609,
+                        "name": "Improve team communications."
+                    }
+                ],
+                "justification": "Improving team communications is the best choice because agile teams use stand-ups to micro-commit to each other, uncover problems, and ensure the work flows smoothly through the team. All other options are not going to help improve the team's performance Focusing on servant leadership is incorrect. The scrum master is generally a servant leader who can achieve results by prioritizing attention to the needs of the team, but this alone does not help enhance the team's performance. Performing a root cause analysis will only help identify the culprit. But the question here is asking how to enhance the team's performance, which can't be accomplished with this activity. Seeking insight from an experienced mentor is incorrect because the team's performance can be improved with collaboration and communication. Hence seeking insights from an experienced mentor is not necessarily helpful in enhancing the team's performance."
+            },
+            "correct_answer": 21609,
+            "given_answer": 21431
+        },
+        {
+            "id": 17876,
+            "course_concept_level_question_banks": {
+                "id": 6098,
+                "name": "The damages arising from a delay in a construction project are high. During a project meeting, a junior project manager suggested dividing the project into two phases. The result of the first phase would be a minimum viable product (MVP) that would provide the client with early benefits. This will limit the extent of the damages and other cost overruns by 90%. What should the project manager do after the meeting?",
+                "course_concept_level_question_bank_options": [
+                    {
+                        "id": 21050,
+                        "name": "Make a decision based on that data and perform integrated change control to prevent cost overruns."
+                    },
+                    {
+                        "id": 21230,
+                        "name": "Present this information to the sponsor and other important stakeholders for approval."
+                    },
+                    {
+                        "id": 21410,
+                        "name": "Propose this to the client and insist it is the best course of action to limit the damages."
+                    },
+                    {
+                        "id": 21589,
+                        "name": "Analyze the data thoroughly and collect more data if necessary to make an informed decision."
+                    }
+                ],
+                "justification": "The junior project manager is suggesting this approach based on personal opinion. It is important that the lead project manager considers and analyze all data to make an informed decision. The other answer choices are incorrect. Making a decision or presenting the information to the stakeholders and clients without thorough analysis is premature."
+            },
+            "correct_answer": 21589,
+            "given_answer": 21410
+        },
+        {
+            "id": 17877,
+            "course_concept_level_question_banks": {
+                "id": 6153,
+                "name": "A supplier and their client agree on about 80% of the scope for a project contract they are working on for the delivery of marketing content. The client has a fixed budget and target completion date and wants to get the most business value from the project as possible by increasing the scope based on a best-effort delivery close to the end of the project.What should the project manager do?",
+                "course_concept_level_question_bank_options": [
+                    {
+                        "id": 21105,
+                        "name": "Create the contract based on the agreed scope and plan an addendum for the scope changes."
+                    },
+                    {
+                        "id": 21285,
+                        "name": "Ensure that a change control process is documented in the contract."
+                    },
+                    {
+                        "id": 21465,
+                        "name": "Propose a dynamic scope contract option and add a fixed number of iterations."
+                    },
+                    {
+                        "id": 21643,
+                        "name": "Increase the number of resources in the contract to deliver the requirements."
+                    }
+                ],
+                "justification": "Best-effort changes at the end of a project can be delivered at a fixed cost by specifying a fixed number of increments where additional scope can be prioritized. Strict change control or addendums would risk missing the completion date. Adding resources is not necessary if the scope is on a best-effort basis. The other answer choices are incorrect. Creating the contract based on the agreed-upon scope and plan is incorrect because it does not provide flexibility on the scope, and the supplier and their client only agree on about 80% of the project scope. Adding a change control process to the contract is incorrect because it will not provide flexibility on the scope. Adding the number of resources will change the budget, but the budget is fixed in this scenario."
+            },
+            "correct_answer": 21465,
+            "given_answer": 21465
+        },
+        {
+            "id": 17878,
+            "course_concept_level_question_banks": {
+                "id": 6040,
+                "name": "A project team has completed the project deliverables per the requirements specified by the project sponsor. The project manager would like to evaluate whether the project delivered value to the project sponsor. What should the project manager evaluate?",
+                "course_concept_level_question_bank_options": [
+                    {
+                        "id": 20993,
+                        "name": "All of the accomplished deliverables against the requirements"
+                    },
+                    {
+                        "id": 21174,
+                        "name": "Whether the deliverables maximized the potential income to the sponsor"
+                    },
+                    {
+                        "id": 21354,
+                        "name": "If the delivery of value was as planned"
+                    },
+                    {
+                        "id": 21534,
+                        "name": "Project delivery in terms of scope, time, and budget"
+                    }
+                ],
+                "justification": "It is necessary to check all the accomplished aspects against the approved requirements documentation. If this was not done, then one cannot conclude whether the value delivery is complete or what portion of value delivery is realized to the customer."
+            },
+            "correct_answer": 20993,
+            "given_answer": null
+        },
+        {
+            "id": 17879,
+            "course_concept_level_question_banks": {
+                "id": 5998,
+                "name": "A company is kicking off a new hybrid project to be in compliance with government regulations. The team has established a velocity of 50 story points per iteration. Every iteration lasts 1 week. The sponsor wants to know when the project will be done if there are 1,500 story points remaining.",
+                "course_concept_level_question_bank_options": [
+                    {
+                        "id": 20950,
+                        "name": "30 weeks"
+                    },
+                    {
+                        "id": 21132,
+                        "name": "15 weeks"
+                    },
+                    {
+                        "id": 21310,
+                        "name": "4 weeks"
+                    },
+                    {
+                        "id": 21488,
+                        "name": "1 week"
+                    }
+                ],
+                "justification": "There are 1,500 story points remaining, velocity = 50 points per iteration. # of iterations remaining = 1,500/ 50 = 30. Every iteration lasts 1 week, then the team will need 30 weeks to complete the project."
+            },
+            "correct_answer": 20950,
+            "given_answer": 21310
+        },
+        {
+            "id": 17880,
+            "course_concept_level_question_banks": {
+                "id": 6162,
+                "name": "A project manager calls a meeting to identify risks for a complicated project. Several subject matter experts are invited to this meeting along with the project team. Why has the project manager invited the subject matter experts?",
+                "course_concept_level_question_bank_options": [
+                    {
+                        "id": 21114,
+                        "name": "Subject matter experts have specialized expertise and can help identify and address high-risk issues."
+                    },
+                    {
+                        "id": 21294,
+                        "name": "Identifying risks in a meeting with subject matter experts makes getting better project resources easier."
+                    },
+                    {
+                        "id": 21473,
+                        "name": "Risks will be easier to accept if the subject matter experts who attended the meeting work together."
+                    },
+                    {
+                        "id": 21654,
+                        "name": "The project manager can leverage subject matter experts' resources to follow up on the identified risks."
+                    }
+                ],
+                "justification": "The correct answer is that subject matter experts have specialized expertise and can help identify and address high-risk issues. Subject matter experts are invited to the meeting because they provide functional expertise that will help to quickly identify high-risk areas. Expert judgment is the contribution provided to risk identification based on expertise in a subject area, industry segment, organizational processes, etc. The other answer choices are incorrect because the meeting was called to identify risks, not what may happen after the risk has been identified. When subject matter experts assist in identifying risks, they do not typically provide resources beyond their expertise. The participation of subject matter experts does not necessarily make risks easier to accept nor does it ensure that better resources will be secured."
+            },
+            "correct_answer": 21114,
+            "given_answer": null
+        },
+        {
+            "id": 17881,
+            "course_concept_level_question_banks": {
+                "id": 6073,
+                "name": "鑱絫eam member who is unfamiliar with the subject matter is struggling to complete a complex deliverable. What should the agile project manager do to ensure that the team member is able to take on a similar challenge in the future?",
+                "course_concept_level_question_bank_options": [
+                    {
+                        "id": 21025,
+                        "name": "Ensure that the team member receives adequate training and is comfortable with the subject matter."
+                    },
+                    {
+                        "id": 21205,
+                        "name": "Encourage the team member to take on more stories on this subject matter until they are completely comfortable."
+                    },
+                    {
+                        "id": 21386,
+                        "name": "Ask the team member to avoid taking on stories on this subject matter until the person is comfortable with the subject matter."
+                    },
+                    {
+                        "id": 21567,
+                        "name": "Replace the team member with a more experienced team member who will improve the team's velocity."
+                    }
+                ],
+                "justification": "`The project manager should provide needed training to address the specific gap where the team member is unfamiliar with the subject matter. The other answer choices are incorrect. Encouraging the team member to take on more or avoid the specific subject matter does not directly address the fact that the team member needs more training on the subject matter. It could also affect the team velocity and quality. Replacing the team member is also incorrect because it would adversely affect the team dynamics, the team member would not improve and grow."
+            },
+            "correct_answer": 21025,
+            "given_answer": null
+        },
+        {
+            "id": 17882,
+            "course_concept_level_question_banks": {
+                "id": 6015,
+                "name": "Discussions during weekly project team meetings are frequently dominated by a senior team member who has a tendency to talk over other team members and openly criticize their point of view. This is causing demoralization of the other team members and resulting in lack of engagement during the meetings. What should the project manager do to address this issue?",
+                "course_concept_level_question_bank_options": [
+                    {
+                        "id": 20966,
+                        "name": "Remove the senior team member from the weekly meeting."
+                    },
+                    {
+                        "id": 21146,
+                        "name": "Organize a team-building activity that encourages finding solutions together."
+                    },
+                    {
+                        "id": 21326,
+                        "name": "Enforce the existing ground rules for team behavior."
+                    },
+                    {
+                        "id": 21508,
+                        "name": "Escalate the behavior of the senior team member to the functional manager."
+                    }
+                ],
+                "justification": "Ground rules, if they exist, are not being followed during the team meetings resulting in the problems described in the stem. The project manager must therefore act to establish them and ensure they are adhered to."
+            },
+            "correct_answer": 21326,
+            "given_answer": null
+        },
+        {
+            "id": 17883,
+            "course_concept_level_question_banks": {
+                "id": 6124,
+                "name": "During an iteration review, a stakeholder suggests speeding up development by using an off-the-shelf, open source product. The project team has analyzed the open source product suitability and determined that it would speed up development, but it needs to be piloted for better understanding and requires additional user skills. What should the project manager do next?",
+                "course_concept_level_question_bank_options": [
+                    {
+                        "id": 21076,
+                        "name": "Request training for the project team."
+                    },
+                    {
+                        "id": 21256,
+                        "name": "Review the cost management plan."
+                    },
+                    {
+                        "id": 21436,
+                        "name": "Initiate change management for budget impacts."
+                    },
+                    {
+                        "id": 21616,
+                        "name": "Consult the product manager for the next steps."
+                    }
+                ],
+                "justification": "Managers should focus on forming teams that have the best set of T-shaped skills that are possible with available personnel. However, it might not be possible to get exactly the desired team skill set from the get-go, so the desired skill set could evolve over time as the needs of the product development effort evolve. Therefore, it is critical to have an environment where people are constantly learning and adding to their skill sets, whether those include domain knowledge, technical knowledge, thinking skills, or other capabilities. Management needs to support team members with time to learn and experiment"
+            },
+            "correct_answer": 21076,
+            "given_answer": null
+        },
+        {
+            "id": 17884,
+            "course_concept_level_question_banks": {
+                "id": 6163,
+                "name": "A project is close to completion, and the customer wants to celebrate the success by sharing a business case about the benefits created by the project. What should the project manager add to their benefits report to the customer?",
+                "course_concept_level_question_bank_options": [
+                    {
+                        "id": 21115,
+                        "name": "Improved project schedule"
+                    },
+                    {
+                        "id": 21295,
+                        "name": "Return on investment (ROI)"
+                    },
+                    {
+                        "id": 21474,
+                        "name": "Risks identified during the project"
+                    },
+                    {
+                        "id": 21653,
+                        "name": "Successful change requests"
+                    }
+                ],
+                "justification": "Opt for the direct and measurable benefits to compare against the cost of doing the project and the cost of operating the new process. If the benefits outweigh the costs over the expected life of the project deliverables, senior management may be willing to support the project."
+            },
+            "correct_answer": 21295,
+            "given_answer": null
+        },
+        {
+            "id": 17885,
+            "course_concept_level_question_banks": {
+                "id": 6023,
+                "name": "Three weeks into the execution of a project, the project manager realizes that their communication with a key stakeholder has been via phone calls only. The stakeholder is copied in the project's email thread which all stakeholders unanimously specified as the only means of communication. How should the project manager address the situation?",
+                "course_concept_level_question_bank_options": [
+                    {
+                        "id": 20976,
+                        "name": "Continue communicating with all stakeholders via the email thread."
+                    },
+                    {
+                        "id": 21157,
+                        "name": "Ask the stakeholder if they prefer the email thread or phone contact."
+                    },
+                    {
+                        "id": 21337,
+                        "name": "Document phone conversations and email the document to all stakeholders."
+                    },
+                    {
+                        "id": 21517,
+                        "name": "Keep records of all phone conversations with the stakeholder."
+                    }
+                ],
+                "justification": "Effective communication is key to the success of a project and the medium needs to be tailored to the needs of stakeholder per time. Considering this key stakeholder is using a different medium asides that which all stakeholder(herself inclusive) originally agreed to, there is a need to enquire to know the cause of this. Information gotten will then determine if there is a need to propose a change to this medium or there is a different underlying cause. Options C and D although are measures which could be adopted do not address the issue as the question requests."
+            },
+            "correct_answer": 21157,
+            "given_answer": null
+        },
+        {
+            "id": 17886,
+            "course_concept_level_question_banks": {
+                "id": 5991,
+                "name": "A project team working on a change-driven project is continually missing the release time lines. The project manager identifies that an experienced team member is assigned to multiple projects. What should the project manager do?",
+                "course_concept_level_question_bank_options": [
+                    {
+                        "id": 20943,
+                        "name": "Report the issue to the project sponsor."
+                    },
+                    {
+                        "id": 21125,
+                        "name": "Adjust the schedule and issue a change request."
+                    },
+                    {
+                        "id": 21302,
+                        "name": "Discuss this with the team at the next retrospective and find a solution."
+                    },
+                    {
+                        "id": 21485,
+                        "name": "Ask the functional manager to assign a dedicated team member to this project."
+                    }
+                ],
+                "justification": "The role of the scrum master/agile coach/ project manager on a change-driven project is to remove impediments for the team. By doing this the team is focused on delivering just the requirement. The team member in this case even though experience has limited time to commit to the project. Replacing this team member with a dedicated one will ensure more resource time on the project ensuring that value can be created quicker."
+            },
+            "correct_answer": 21485,
+            "given_answer": null
+        },
+        {
+            "id": 17887,
+            "course_concept_level_question_banks": {
+                "id": 6075,
+                "name": "A scrum team is using a hybrid approach with 2-week sprints. The minimum viable product (MVP) release is at the end of the current sprint, and the team has completed the must and should features; however, some of the other priority features are still in development. The project manager is preparing the monthly report for the steering committee. What should the project manager recommend?",
+                "course_concept_level_question_bank_options": [
+                    {
+                        "id": 21027,
+                        "name": "Reschedule the MVP release review until all the agreed-on features have been completed."
+                    },
+                    {
+                        "id": 21208,
+                        "name": "Update the project management plan to include in the release only the features completed."
+                    },
+                    {
+                        "id": 21385,
+                        "name": "Organize the sprint review and proceed with releasing the MVP only with the features completed."
+                    },
+                    {
+                        "id": 21566,
+                        "name": "Estimate the effort required and submit a change request to add more resources to the team."
+                    }
+                ],
+                "justification": "The purpose of the MVP is to gather feedback. If the core functionality is ready the release should proceed as planned."
+            },
+            "correct_answer": 21385,
+            "given_answer": null
+        },
+        {
+            "id": 17888,
+            "course_concept_level_question_banks": {
+                "id": 6020,
+                "name": "A project manager is assigned to a long-term project with a duration of three years. Which approach should the project manager take to address near-term activities, while long-term work is planned at a high level and detailed later?",
+                "course_concept_level_question_bank_options": [
+                    {
+                        "id": 20972,
+                        "name": "Focus on acquiring a team and deliver as soon as possible."
+                    },
+                    {
+                        "id": 21152,
+                        "name": "Engage the sponsor in the validation and prioritization processes."
+                    },
+                    {
+                        "id": 21331,
+                        "name": "Perform workshops with the client for delivery dates."
+                    },
+                    {
+                        "id": 21511,
+                        "name": "Validate the requirements and perform rolling wave planning."
+                    }
+                ],
+                "justification": "As we progress through the items on our road-map, the feedback we gather as we begin to validate our ideas at each step will inform what we need to do in the future. With a Rolling Wave Plan, we should have regular checkpoints to incorporate new information and adjust our plan accordingly. The other answer choices are incorrect. They do not address the need for the progressive elaboration required in a long-term project."
+            },
+            "correct_answer": 21511,
+            "given_answer": null
+        },
+        {
+            "id": 17889,
+            "course_concept_level_question_banks": {
+                "id": 6148,
+                "name": "A distributed team just finished an iteration that completed complex tasks ahead of schedule. During a retrospective, a new member interrupts and asks everyone to reiterate their role and what they have worked on in previous iterations. What should the project manager do?",
+                "course_concept_level_question_bank_options": [
+                    {
+                        "id": 21100,
+                        "name": "Refer the new team member to the project management plan."
+                    },
+                    {
+                        "id": 21279,
+                        "name": "Inform the team member that this would be best handled in another meeting."
+                    },
+                    {
+                        "id": 21460,
+                        "name": "Ask each team member to explain their role and what they worked on in the previous iteration."
+                    },
+                    {
+                        "id": 21640,
+                        "name": "Ask the functional manager of the new team member to review the onboarding process."
+                    }
+                ],
+                "justification": "The best way for the project manager to handle the interruption is to inform the team member that this would be best handled in another meeting, like a backlog refinement for sprint planning, not the retrospective. The other answer choices are incorrect as they suggest that the project manager should accommodate the new team member's question at an inappropriate time."
+            },
+            "correct_answer": 21279,
+            "given_answer": null
+        }
+    ]
+}

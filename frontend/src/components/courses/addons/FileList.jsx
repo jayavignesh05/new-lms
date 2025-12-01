@@ -102,12 +102,12 @@ const FileList = ({ resources, base_api }) => {
         </div>
       )}
 
-      {/* RIGHT SIDE: PDF VIEWER */}
+      
       <div
         className="file-preview-area"
         onContextMenu={(e) => e.preventDefault()}
       >
-        {/* 3. CRITICAL FIX: Only render Document if activeFile exists */}
+        
         {activeFile ? (
           <div
             style={{

@@ -1,57 +1,210 @@
-.tab-switcher {
-  margin-bottom: 20px;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* --- Global Styles --- */
+* {
+  box-sizing: border-box;
+}
+
+.login-container {
+  min-height: 100vh;
   display: flex;
+  align-items: center;
   justify-content: center;
-  gap: 60px;
-}
-
-.tab-button {
-  background: none;
-  border: none;
-  padding: 15px 20px;
-  font-family: "Inter", sans-serif;
-  font-size: 1rem;
-  font-weight: 400;
-  color: #ffffff;
-  cursor: pointer;
-  transition: color 0.3s ease, border-color 0.3s ease;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   position: relative;
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
-  border-bottom: 2px solid transparent;
+  font-family: "Inter", sans-serif;
 }
 
-.tab-button:hover {
-  color: #fa0202;
-}
-
-.tab-button.active {
-  color: #fa0202;
-}
-
-.tab-button.active::after {
+/* Overlay for better text readability */
+.login-container::before {
   content: "";
   position: absolute;
-  bottom: -2px;
-  left: 0;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(1px);
+}
+
+/* --- MAIN SPLIT CARD --- */
+.split-card {
+  position: relative;
+  z-index: 2;
+  display: flex; /* Creates Left & Right sections */
+  width: 900px;
+  max-width: 95%;
+  height: 550px; /* Fixed height for consistent look */
+  
+  /* Glassmorphism Effect */
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* --- LEFT SIDEBAR (Logo & Nav) --- */
+.card-sidebar {
+  width: 35%; /* Takes 35% of width */
+  background: rgba(0, 0, 0, 0.3); /* Slightly darker */
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.sidebar-logo {
+  max-height: 70px;
+  margin-bottom: 50px;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+}
+
+.nav-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   width: 100%;
-  height: 2px;
-  background-color: #e53935;
-  animation: slideIn 0.3s forwards;
 }
 
-@keyframes slideIn {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
+/* Sidebar Buttons (Boxy Style) */
+.side-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  letter-spacing: 1px;
 }
 
-.register-content {
-  /* Set a fixed height. Adjust this value as needed. */
-  max-height: 250px; 
+.side-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.side-btn.active {
+  background: #fff;
+  color: #c62828; /* Active Red Color */
+  border-color: #fff;
+  font-weight: 700;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* --- RIGHT CONTENT (Forms) --- */
+.card-main {
+  width: 65%; /* Takes remaining width */
+  padding: 40px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+/* --- Form Elements --- */
+.login-input {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.input-label {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* Keeping your existing Input Style */
+.textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  font-size: 15px;
+  outline: none;
+}
+
+.textarea:focus {
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+}
+
+/* Action Button */
+.action-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background: #e53935; /* Red Button */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.action-btn:hover {
+  background: #c62828;
+}
+
+/* --- Register Form Scroll --- */
+.scrollable-form {
+  max-height: 380px;
   overflow-y: auto;
-  padding-right: 15px; /* Add some padding to prevent scrollbar from overlapping content */
+  padding: 20px;
+}
+
+/* Custom Scrollbar */
+.scrollable-form::-webkit-scrollbar { width: 6px; }
+.scrollable-form::-webkit-scrollbar-track { background: rgba(255,255,255,0.1); border-radius: 10px; }
+.scrollable-form::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.5); border-radius: 10px; }
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+  .split-card {
+    flex-direction: column;
+    height: auto;
+    width: 90%;
+    margin: 20px 0;
+  }
+  
+  .card-sidebar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+  }
+  
+  .sidebar-logo {
+    margin-bottom: 0;
+    height: 40px;
+  }
+  
+  .nav-buttons {
+    flex-direction: row;
+    width: auto;
+  }
+  
+  .side-btn {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+  
+  .card-main {
+    width: 100%;
+    padding: 30px 20px;
+  }
 }

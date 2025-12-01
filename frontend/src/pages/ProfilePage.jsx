@@ -1,11 +1,9 @@
-/* eslint-disable no-empty */
-/* eslint-disable no-unused-vars */
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./ProfilePage.css";
-import profileImage from "../assets/profilepic.png";
+import profileImage from "../assets/profilepic.jpg";
 
 import ProfilePicCard from "../components/profile/ProfilePicCard";
 import ContactCard from "../components/profile/ContactCard";
@@ -31,11 +29,12 @@ const ProfilePage = () => {
   };
   const handleEditEnd = () => {
     setActiveEditingCard(null);
+    
   };
   const educationsContainerRef = useRef(null);
   const experiencesContainerRef = useRef(null);
   const addressesContainerRef = useRef(null);
-  const base_api = "http://localhost:7000/api";
+  const base_api = "https://9kz24kbm-7000.inc1.devtunnels.ms/api";
 
   const fetchAllData = async () => {
     const token = localStorage.getItem("token");
@@ -64,6 +63,7 @@ const ProfilePage = () => {
         );
         setProfilePic(URL.createObjectURL(picRes.data));
       } catch (err) {
+        console.error("Failed to load profile picture:", err);
       }
     } catch (e) {
       setError(e.response?.data?.error || e.message);

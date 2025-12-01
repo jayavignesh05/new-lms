@@ -36,7 +36,7 @@ function Contact() {
         </div>
         <div className="w-50">
           <div className="flex justify-center">
-            <img src="/contactus.jpg" alt="Contact Us" className="w-50 h-50" />
+            <img src="/contactus.jpg" alt="Contact Us" loading="eager" className="w-50 h-50" />
           </div>
         </div>
       </section>

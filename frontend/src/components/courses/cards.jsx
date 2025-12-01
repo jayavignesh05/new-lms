@@ -11,8 +11,8 @@ const Cards = () => {
   const [filter, setFilter] = useState("all");
   const [error, setError] = useState(null);
 
-  const base_api = "http://localhost:7000/api";
-  
+  const base_api = "https://9kz24kbm-7000.inc1.devtunnels.ms/api";
+
   const token = localStorage.getItem("token");
 
   useEffect(() => {
@@ -48,7 +48,7 @@ const Cards = () => {
   });
 
   return (
-    <div className="p-4">
+    <div className="p">
       <div className="filter-buttons-container">
         <button
           onClick={() => setFilter("all")}
@@ -73,7 +73,11 @@ const Cards = () => {
       <div key={filter} style={{ animation: "fadeIn 0.5s ease-out" }}>
         <div className="course-grid">
           {filteredCourses.map((course, index) => (
-            <SingleCourseCard key={course.courses_code || index} course={course} base_api={base_api} />
+            <SingleCourseCard
+              key={course.courses_code || index}
+              course={course}
+              base_api={base_api}
+            />
           ))}
         </div>
       </div>
@@ -121,6 +125,7 @@ const SingleCourseCard = ({ course, base_api }) => {
           <img
             src={`${base_api.replace("/api", "")}${course.img_url}`}
             alt={course.courses_name}
+            loading="eager"
           />
           <span
             className={`status-badge ${
@@ -157,7 +162,7 @@ const SingleCourseCard = ({ course, base_api }) => {
                 Number(course.pending_amount) > 0 ? "#fee2e2" : "#dcfce7",
               color: Number(course.pending_amount) > 0 ? "#dc2626" : "#16a34a",
             }}
-            onClick={handlePaymentStatusClick} 
+            onClick={handlePaymentStatusClick}
           >
             {Number(course.pending_amount) > 0 ? "Due" : "Paid"}
           </button>

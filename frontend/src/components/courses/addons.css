@@ -712,10 +712,10 @@
 }
 
 
-/* --- HIDDEN CERTIFICATE STYLING --- */
+
 .certificate-container {
-  width: 1123px; /* A4 Width in Pixels */
-  height: 794px; /* A4 Height in Pixels */
+  width: 1123px; 
+  height: 794px; 
   background-color: #ffffff;
   padding: 40px;
   position: relative;
@@ -723,7 +723,7 @@
   font-family: "Inter", sans-serif;
   text-align: center;
   color: #1e293b;
-  border: 1px solid #ddd; /* Temporary border to see if rendering */
+  border: 1px solid #ddd; 
 }
 
 .cert-border {
@@ -869,4 +869,111 @@
   }
   .vid-nav-btn.prev { left: 10px; }
   .vid-nav-btn.next { right: 10px; }
+}
+/* Container Spacing */
+.addon-group {
+  margin-top: 20px;
+}
+
+.resources-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* --- THE CARD DESIGN --- */
+.interactive-row-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+  /* Glass / Clean White Look */
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 15px 20px;
+  
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.interactive-row-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  border-color: #3b82f6; /* Blue highlight on hover */
+}
+
+/* --- ICON BOX --- */
+.interactive-icon-box {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-right: 20px;
+}
+
+.interactive-icon-box.link-style {
+  background: #eff6ff; /* Light Blue bg */
+  color: #3b82f6;      /* Blue Icon */
+}
+
+/* --- TEXT INFO --- */
+.interactive-info {
+  flex: 1; /* Takes remaining space */
+}
+
+.interactive-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.interactive-subtitle {
+  font-size: 13px;
+  color: #64748b;
+  display: block;
+  margin-top: 4px;
+  
+  /* Truncate long URLs with ... */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 300px;
+}
+
+
+
+.link-btn-style {
+  background: #3b82f6;
+  color: white;
+}
+
+.link-btn-style:hover {
+  background: #2563eb; /* Darker Blue */
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 600px) {
+  .interactive-row-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .interactive-icon-box {
+    margin-right: 0;
+  }
+  
+  .interactive-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .interactive-subtitle {
+    max-width: 100%;
+  }
 }

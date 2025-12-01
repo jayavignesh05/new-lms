@@ -1,12 +1,4 @@
-.p-4 {
-  border-radius: 20px;
-  /* width: 1200px; */
-  /* margin: 0 auto; */
-  padding: 40px 20px;
-  background-color: #f8fafc;
-  min-height: 100vh;
-  font-family: "Inter", sans-serif;
-}
+
 
 .course-grid {
   display: grid;

@@ -17,10 +17,10 @@ import HistoryPage from "../pages/HistoryPage";
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Login />} />
+      <Route path="/login" element={<Login />} />
       <Route element={<ProtectedRoute />}>
         <Route element={<Layout />}>
-          
+          <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/certificates" element={<MyCertificates />} />
           <Route path="/profile" element={<ProfilePage />} />

@@ -3,10 +3,11 @@ import { Outlet } from "react-router-dom";
 import Header from "./header";
 import Sidebar from "./sidebar";
 import axios from "axios";
-import defaultProfilePic from "../assets/profilepic.png";
+import defaultProfilePic from "../assets/profilepic.jpg";
 
 export default function Layout() {
-  const [isSidebarOpen, setSidebarOpen] = useState(false);
+  // Set initial state based on window width
+  const [isSidebarOpen, setSidebarOpen] = useState(window.innerWidth > 992);
   const [profilePic, setProfilePic] = useState(defaultProfilePic);
 
   const toggleSidebar = () => {
@@ -20,7 +21,7 @@ export default function Layout() {
 
       try {
         const picRes = await axios.post(
-          `http://localhost:7000/api/profile/getProfilePic`,
+          `https://9kz24kbm-7000.inc1.devtunnels.ms/api/profile/getProfilePic`,
           { token },
           { responseType: "blob" }
         );
@@ -35,10 +36,27 @@ export default function Layout() {
     fetchProfilePic();
   }, []);
 
+  // Add effect to handle window resize
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 992) {
+        setSidebarOpen(false); // Collapse on small screens
+      } else {
+        setSidebarOpen(true); // Expand on large screens
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div className="layout">
-      <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
-      <div className="rightside">
+      <Sidebar
+        isSidebarOpen={isSidebarOpen}
+        toggleSidebar={toggleSidebar}
+        isCollapsed={!isSidebarOpen}
+      />
+      <div className={`rightside ${!isSidebarOpen ? "sidebar-collapsed" : ""}`}>
         <Header toggleSidebar={toggleSidebar} profilePic={profilePic} />
         <div className="app-content">
           <Outlet />

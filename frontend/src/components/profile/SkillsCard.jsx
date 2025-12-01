@@ -9,7 +9,7 @@ const SkillsCard = ({ onDataChange, onEditStart, onEditEnd }) => {
   const [skills, setSkills] = useState([]);
   const [newSkill, setNewSkill] = useState("");
   const [loading, setLoading] = useState(false);
-  const base_api = "http://localhost:7000/api";
+  const base_api = "https://9kz24kbm-7000.inc1.devtunnels.ms/api";
 
   const fetchSkills = async () => {
     const token = localStorage.getItem("token");

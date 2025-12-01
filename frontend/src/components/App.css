@@ -1,227 +1,174 @@
-
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 @import "tailwindcss/preflight";
 @tailwind utilities;
 @import "tailwindcss";
-
+/* --- RESET & BASE STYLES --- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-
 html,
 body,
 #root {
   height: 100%;
   font-family: "Inter", sans-serif;
+  background-color: #f5f4f4;
 }
 
+/* --- MAIN LAYOUT --- */
 .layout {
   display: flex;
   width: 100%;
-  height: 100vh;
-  background-color: #f5f4f4;
-  overflow: hidden;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden; /* Prevents double scrollbars */
 }
 
+/* --- SIDEBAR (Left Side) --- */
+/* Note: Assuming you have a div with class 'leftside' */
+.leftside {
+  width: 240px;
+  height: 100%;
+  background-color: #fff;
+  border-right: 1px solid #eee;
+  transition: all 0.3s ease-in-out;
+  flex-shrink: 0; /* Prevents sidebar from shrinking */
+  z-index: 100;
+}
+
+.leftside.collapsed {
+  width: 75px; /* Collapsed width for desktop */
+}
+
+/* --- MAIN CONTENT (Right Side) --- */
 .rightside {
-  margin-left: 240px;
+  flex: 1; /* Takes remaining space automatically */
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  transition: margin-left 0.3s ease, width 0.3s ease;
-}
-
-
-.hamburger {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  margin-right: 12px;
-}
-
-.app-content {
-  flex: 1;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-}
-
-@media (max-width: 1024px) {
-  .leftside {
-    /* width: 200px; */
-  }
-  .rightside {
-    /* margin-left: 200px; */
-    /* width: calc(100% - 200px); */
-  }
-  .app-content {
-    padding: 15px;
-  }
-}
-
-@media (max-width: 768px) {
-  .leftside {
-    left: -240px;
-    /* width: 240px; */
-  }
-
-  .leftside.open {
-    left: 0;
-  }
-
-  .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 90;
-  }
-
-  .rightside {
-    margin-left: 0;
-    width: 100%;
-  }
-
-  .hamburger {
-    display: block;
-  }
-
-  .app-content {
-    padding: 12px;
-  }
-}
-
-.layout {
-  display: flex;
-  min-height: 100vh;
-}
-
-.rightside {
-  flex-grow: 1;
-  margin-left: 240px;
+  height: 100%;
+  min-width: 0; /* Prevents flex overflow issues */
   transition: margin-left 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  width: calc(100% - 240px); 
 }
 
-.rightside.sidebar-collapsed {
-  margin-left: 80px;
-  width: calc(100% - 80px);
-}
-
+/* --- HEADER --- */
 .app-header {
   height: 70px;
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
   align-items: center;
-  padding: 10px 24px;
+  padding: 0 24px;
   background: #fff;
   border-bottom: 1px solid #eee;
   position: sticky;
   top: 0;
-  z-index: 900;
+  z-index: 50;
 }
 
 .header-root {
-  gap: 15px; /* Sets space between profile name and icon */
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
-
 
 .header-logo {
   height: 40px;
 }
 
+/* --- HAMBURGER MENU --- */
 .hamburger {
-  display: none;
+  display: none; /* Hidden on Desktop */
   background: none;
   border: none;
   cursor: pointer;
   color: #374151;
   margin-right: 15px;
+  font-size: 1.5rem;
 }
 
+/* --- CONTENT AREA --- */
+.app-content {
+  flex: 1; /* Fills remaining height below header */
+  overflow-y: auto; /* Scroll only inside content area */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- OVERLAY (For Mobile) --- */
 .overlay {
-  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 90;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
 }
 
+.overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* --- INPUT STYLES --- */
+.textarea {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.textarea:focus {
+  border-color: #3b82f6; /* Blue border on focus */
+  outline: none;
+}
+
+/* =========================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================= */
+
+/* Tablet & Mobile (Below 768px) */
 @media (max-width: 768px) {
+  /* Sidebar becomes off-canvas */
+  .leftside {
+    position: fixed;
+    top: 0;
+    left: -240px; /* Hide outside screen */
+    height: 100%;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .leftside.open {
+    left: 0; /* Bring inside screen */
+  }
+
+  /* Rightside takes full width */
   .rightside {
-    margin-left: 0;
     width: 100%;
-  }
-  .rightside.sidebar-collapsed {
     margin-left: 0;
-    width: 100%;
   }
+
+  /* Show Hamburger */
   .hamburger {
     display: block;
   }
 
-  .app-header {
-    justify-content: space-between;
-  }
-  
-  .app-header > div:first-child {
-      flex: 1;
-  }
-  
-  .app-header > .profile-icon {
-      flex-shrink: 0;
-  }
-
+  /* Hide Desktop Logo if needed to save space */
   .header-logo {
     display: none;
   }
 
-  .overlay {
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4);
-    z-index: 999;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
+  .app-header {
+    padding: 0 15px;
   }
 
-  .leftside.open ~ .overlay {
-    opacity: 1;
-    pointer-events: auto;
+  .app-content {
+    padding: 12px;
   }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-
-
-.textarea{
-  background-color: rgb(255, 255, 255) !important;
-  color: rgb(0, 0, 0) !important;
-  border: 1px solid rgba(255, 255, 255, 0.3) !important;
-}
-
-
-
-.textarea:focus {
-  background-color: rgb(255, 255, 255) !important;
-  color: rgb(0, 0, 0) !important;
-  box-shadow: none !important;
-  outline: none !important;
 }

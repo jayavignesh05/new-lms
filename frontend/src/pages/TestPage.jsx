@@ -47,15 +47,11 @@ const TestPage = () => {
   return (
     <div className="p-6 flex justify-center font-sans">
       <div className="w-full max-w-6xl flex flex-col gap-8">
-        {/* --- HEADER (Orange Gradient) --- */}
-       <div className="flex gap-1 align-items-center text-center">
-               <button  onClick={() => navigate(-1)} className="hover:bg-white/20 p-2 rounded-full transition duration-200">
-                 <FaArrowLeft size={24}  className="text-[#f06508d0]"/>
-               </button>
-               <h2 className="text-[#f06508d0] m-0 text-4xl text-center">
-                History
-               </h2>
-             </div>
+        <div className="flex gap-1 align-items-center text-center">
+          <h2 className="text-gray-600 m-0 text-4xl text-center">
+            My Assessment
+          </h2>
+        </div>
 
         {/* --- CARDS LIST --- */}
         <div className="flex flex-col gap-6">
@@ -64,26 +60,28 @@ const TestPage = () => {
               key={item.id}
               className="bg-white rounded-3xl shadow-sm border border-orange-100 overflow-hidden hover:shadow-md transition-all duration-300 relative"
             >
-              {/* Decorative Left Border */}
               <div
                 className={`absolute left-0 top-0 bottom-0 w-1.5 ${
-                  item.isExpired ? "bg-gray-300" : "bg-[#f7b12683]"
+                  item.isExpired ? "bg-gray-300" : "bg-orange-400"
                 }`}
               ></div>
 
               <div className="p-6 pl-8 sm:p-8 sm:pl-10 ">
-                {/* 1. TITLE */}
                 <div className="mb-6">
-                  <h2 className="text-gray-800 font-bold text-lg leading-snug">
+                  <h2 className="text-gray-700 font-bold text-lg leading-snug">
                     {item.title}
                   </h2>
                 </div>
 
-                {/* 2. DETAILS GRID (Icons + Text) */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 ">
-                  {/* Questions */}
-                  <div className="flex items-center gap-3">
-                    <div className="p-2 bg-orange-50 rounded-lg text-orange-600">
+                  <div className="flex items-center gap-3 justify-start">
+                    <div
+                      className={`p-2 rounded-lg ${
+                        item.isExpired
+                          ? "bg-gray-300 text-gray-400"
+                          : "bg-orange-50 text-orange-400"
+                      }`}
+                    >
                       <FaQuestionCircle />
                     </div>
                     <div>
@@ -96,9 +94,14 @@ const TestPage = () => {
                     </div>
                   </div>
 
-                  {/* Duration */}
-                  <div className="flex items-center gap-3">
-                    <div className="p-2 bg-orange-50 rounded-lg text-orange-600">
+                  <div className="flex items-center gap-3 justify-center">
+                    <div
+                      className={`p-2 rounded-lg ${
+                        item.isExpired
+                          ? "bg-gray-300 text-gray-400"
+                          : "bg-orange-50 text-orange-400"
+                      }`}
+                    >
                       <FaClock />
                     </div>
                     <div>
@@ -111,9 +114,15 @@ const TestPage = () => {
                     </div>
                   </div>
 
-                  {/* Mock Type Dropdown */}
-                  <div className="flex items-center gap-3">
-                    <div className="p-2 bg-orange-50 rounded-lg text-orange-600">
+                  <div className="flex items-center gap-3 justify-end">
+                    <div
+                      className={`p-2 rounded-lg ${
+                        item.isExpired
+                          ? "bg-gray-300 text-gray-400"
+                          : "bg-orange-50 text-orange-400"
+                      }`}
+                    >
+                      {" "}
                       <FaLayerGroup />
                     </div>
                     <div className="w-full max-w-[140px]">
@@ -141,29 +150,25 @@ const TestPage = () => {
                   </div>
                 </div>
 
-                {/* 3. FOOTER (Divider + Actions) */}
                 <div className="pt-6 border-t border-gray-100 flex flex-col sm:flex-row justify-between items-center gap-4">
-                  {/* Expiry Date */}
                   <div className="text-sm font-medium text-gray-500 bg-gray-50 px-3 py-1.5 rounded-md">
                     {item.isExpired ? "Expired on:" : "Expiring on:"}{" "}
                     <span
                       className={`font-bold ${
-                        item.isExpired ? "text-red-500" : "text-orange-700"
+                        item.isExpired ? " text-gray-400" : "text-orange-400"
                       }`}
                     >
                       {item.expiryDate}
                     </span>
                   </div>
 
-                  {/* Buttons */}
                   <div className="flex gap-3 w-full sm:w-auto justify-center sm:justify-end">
-                    {/* Resume Button */}
                     <button
                       className={`text-white text-sm font-bold py-2.5 px-6 rounded-lg shadow-sm transition-all duration-200
                         ${
                           item.isExpired
                             ? "bg-gray-400 cursor-not-allowed"
-                            : "bg-[#f7a726cb] hover:bg-orange-700 hover:shadow-md"
+                            : "bg-orange-400 hover:bg-orange-700 hover:shadow-md"
                         }
                       `}
                       disabled={item.isExpired}
@@ -171,12 +176,17 @@ const TestPage = () => {
                       {item.buttonText}
                     </button>
 
-                    {/* History Button */}
                     <button
                       onClick={() => navigate("/assessment-history")}
-                      className="bg-white text-orange-700 text-sm font-bold py-2.5 px-5 rounded-lg border border-orange-200 hover:bg-orange-50 transition-all duration-200 flex items-center gap-2"
+                      className={`text-sm font-bold py-2.5 px-5 rounded-lg border transition-all duration-200 flex items-center gap-2 ${
+                        item.isExpired
+                          ? "bg-gray-200 text-gray-500 border-gray-300 cursor-not-allowed"
+                          : " text-orange-400 border-orange-200 hover:bg-orange-100 "
+                      }`}
+                      disabled={item.isExpired}
                     >
-                      <FaHistory className="text-orange-500" /> History
+                      <FaHistory className="group-hover:text-white" />
+                      History
                     </button>
                   </div>
                 </div>

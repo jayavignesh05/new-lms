@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 
 const ProfilePicCard = ({ profilePic, setProfilePic, defaultImage }) => {
   const fileInputRef = useRef(null);
-  const base_api = "http://localhost:7000/api";
+  const base_api = "https://9kz24kbm-7000.inc1.devtunnels.ms/api";
 
   const handleProfilePicEditClick = () => {
     fileInputRef.current.click();
@@ -42,7 +42,7 @@ const ProfilePicCard = ({ profilePic, setProfilePic, defaultImage }) => {
   return (
     <div className="grid-card profile-pic-card">
       <div className="profile-pic">
-        <img src={profilePic || defaultImage} alt="Profile" />
+        <img src={profilePic || defaultImage} alt="Profile" loading="eager"/>
         <div className="profile-pic-edit" onClick={handleProfilePicEditClick}>
           <MdOutlineEdit />
         </div>

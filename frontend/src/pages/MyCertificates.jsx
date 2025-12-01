@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { FaAward, FaTrophy, FaMedal } from "react-icons/fa6";
@@ -10,7 +9,7 @@ const MyCertificates = () => {
   const [certificates, setCertificates] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const base_api = "http://localhost:7000/api";
+  const base_api = "https://9kz24kbm-7000.inc1.devtunnels.ms/api";
   const token = localStorage.getItem("token");
 
   const studentName = localStorage.getItem("userName") || "Student";
@@ -22,7 +21,6 @@ const MyCertificates = () => {
           token: token,
         });
 
-        // Filter only completed courses
         const completedCourses = response.data.filter((c) => c.status === 2);
 
         setCertificates(completedCourses);
@@ -37,19 +35,15 @@ const MyCertificates = () => {
 
   if (loading) return <Spinner />;
 
-  // --- LOGIC FOR STATS ---
   const totalCount = certificates.length;
 
-  // Logic: Find the latest date from the list
   const getLastAchievementDate = () => {
     if (totalCount === 0) return "N/A";
 
-    // Sort certificates by end_date (Newest first)
     const sortedCerts = [...certificates].sort((a, b) => {
       return new Date(b.end_date) - new Date(a.end_date);
     });
 
-    // Format the date (e.g., "25 Nov 2025")
     const lastDate = sortedCerts[0].end_date;
     return new Date(lastDate).toLocaleDateString("en-GB", {
       day: "numeric",
@@ -62,10 +56,7 @@ const MyCertificates = () => {
     <div className="p-4">
       <h2 className="page-title">My Certificates</h2>
 
-      {/* --- STATS OVERVIEW --- */}
       <div className="stats-overview">
-
-        {/* Box 1: Total Certificates */}
         <div className="stat-box total-box">
           <div className="stat-icon-circle blue">
             <FaTrophy />
@@ -76,25 +67,22 @@ const MyCertificates = () => {
           </div>
         </div>
 
-        {/* Box 2: Last Achievement (Date) */}
         <div className="stat-box achievement-box">
           <div className="stat-icon-circle gold">
             <FaMedal />
           </div>
           <div className="stat-details">
             <span className="stat-label">Last Achievement</span>
-            {/* Calling the date function here */}
             <h3 className="stat-value">{getLastAchievementDate()}</h3>
           </div>
         </div>
 
       </div>
 
-      {/* --- CERTIFICATES GRID --- */}
       {certificates.length > 0 ? (
         <div className="cert-grid">
-          {certificates.map((cert) => (
-            <div key={cert.user_course_id} className="cert-card">
+          {certificates.map((cert ,index) => (
+            <div key={cert.user_course_id || index} className="cert-card">
 
               <div className="cert-icon-box">
                 <FaAward />
@@ -108,7 +96,6 @@ const MyCertificates = () => {
 
               <div className="cert-action">
                 <HtmlCertificateBtn
-                  key={cert.id}
                   studentName={studentName}
                   courseName={cert.courses_name}
                 />

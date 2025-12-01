@@ -8,8 +8,7 @@ import {
   FaClipboardQuestion,
   FaLayerGroup,
 } from "react-icons/fa6";
-import "../courses/addons.css"
-
+import "../courses/addons.css";
 
 // Import Sub-Components
 import FeedbackList from "./addons/FeedbackList";
@@ -17,8 +16,9 @@ import VideoList from "./addons/VideoList";
 import FileList from "./addons/FileList";
 import QuizList from "./addons/QuizList";
 import Spinner from "../courses/Spinner";
+import Refelink from "./addons/ReferenceList.jsx";
 
-import HtmlCertificateBtn from "../../components/certificate/HtmlCertificateBtn.jsx"; 
+import HtmlCertificateBtn from "../../components/certificate/HtmlCertificateBtn.jsx";
 const CourseDetail = () => {
   const { courseCode } = useParams();
   const navigate = useNavigate();
@@ -26,7 +26,7 @@ const CourseDetail = () => {
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState(null);
 
-  const base_api = "http://localhost:7000/api";
+  const base_api = "https://9kz24kbm-7000.inc1.devtunnels.ms/api";
   const token = localStorage.getItem("token");
   const studentName = localStorage.getItem("userName") || "Student";
 
@@ -56,7 +56,7 @@ const CourseDetail = () => {
   }, [courseCode]);
 
   if (loading) return <Spinner />;
-  if (!course) return <div className="p-4">Course not found!</div>;
+  if (!course) return <div className="p">Course not found!</div>;
 
   const availableTabs = course.addons
     ? [...new Set(course.addons.map((addon) => addon.type))]
@@ -64,17 +64,28 @@ const CourseDetail = () => {
 
   const getTabIcon = (type) => {
     if (type === "video") return <FaVideo />;
-    if (type === "ebook" || type === "syllabus" || type === "interview_question" || type === "reference_link") return <FaFilePdf />;
+    if (
+      type === "ebook" ||
+      type === "syllabus" ||
+      type === "interview_question" ||
+      type === "reference_link"
+    )
+      return <FaFilePdf />;
     if (type === "quiz" || type === "feedback") return <FaClipboardQuestion />;
     return <FaLayerGroup />;
   };
 
   return (
-    <div className="p-4">
-
+    <div className="p">
       {/* --- TOP BAR --- */}
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "20px" }}>
-
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          marginBottom: "20px",
+        }}
+      >
         {/* Back Button */}
         <button onClick={() => navigate(-1)} className="back-btn-modern">
           <FaArrowLeft /> <span>Back to Dashboard</span>
@@ -87,7 +98,6 @@ const CourseDetail = () => {
             courseName={course.courses_name}
           />
         )}
-
       </div>
 
       {/* --- TABS --- */}
@@ -125,7 +135,6 @@ const CourseDetail = () => {
                     case "ebook":
                     case "syllabus":
                     case "interview_question":
-                    case "reference_link":
                       return (
                         <FileList
                           key={index}
@@ -134,10 +143,18 @@ const CourseDetail = () => {
                           base_api={base_api}
                         />
                       );
+                    case "reference_link":
+                      return (
+                        <Refelink key={index} resources={group.resources} />
+                      );
                     case "quiz":
-                      return <QuizList key={index} resources={group.resources} />;
+                      return (
+                        <QuizList key={index} resources={group.resources} />
+                      );
                     case "feedback":
-                      return <FeedbackList key={index} resources={group.resources} />;
+                      return (
+                        <FeedbackList key={index} resources={group.resources} />
+                      );
                     default:
                       return null;
                   }

@@ -9,9 +9,26 @@
   height: 65px; /* Fixed height */
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 999;
 }
 
+/* Sidebar Toggle Button */
+.sidebar-toggle-btn {
+  background: none;
+  border: none;
+  color: #4a5568; /* Gray color */
+  font-size: 22px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+.sidebar-toggle-btn:hover {
+  background-color: #f7fafc; /* Light gray on hover */
+}
 /* New container for profile name, icon, and dropdown */
 .profile-container {
   position: relative; /* Needed for the absolute dropdown */

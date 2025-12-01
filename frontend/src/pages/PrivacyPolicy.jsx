@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../assets/caddcentre.svg";
+import logo from "../assets/caddcentre.png";
 import "./PrivacyPolicy.css";
 import { BiArrowBack } from "react-icons/bi";
 import { NavLink } from "react-router-dom";
@@ -8,7 +8,7 @@ function PrivacyPolicy() {
   return (
     <div className="policy-container">
       <header className="policy-header">
-        <img src={logo} alt="CADD Centre Logo" className="policy-logo" />
+        <img src={logo} alt="CADD Centre Logo" className="policy-logo" loading="eager" />
       </header>
 
       <main className="policy-content">

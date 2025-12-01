@@ -14,7 +14,7 @@ const EducationCard = ({ educationData, onDataChange, onEditStart, onEditEnd }) 
     institutes: [],
   });
   const containerRef = useRef(null);
-  const base_api = "http://localhost:7000/api";
+  const base_api = "https://9kz24kbm-7000.inc1.devtunnels.ms/api";
 
   const fetchDropdowns = async () => {
     const [degRes, instRes] = await Promise.all([

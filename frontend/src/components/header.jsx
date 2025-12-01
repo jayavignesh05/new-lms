@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { CgProfile } from "react-icons/cg";
+import { MdMenu } from "react-icons/md";
 import { useNavigate, Link } from "react-router-dom";
 import "./header.css";
+import { RiMenuFold2Fill } from "react-icons/ri";
 
-export default function Header({ profilePic }) {
+export default function Header({ profilePic, toggleSidebar }) {
   const [isBoxOpen, setIsBoxOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -17,7 +19,7 @@ export default function Header({ profilePic }) {
 
   const handleLogout = () => {
     localStorage.clear();
-    navigate("/");
+    navigate("/login");
   };
 
   const closeBox = () => {
@@ -27,7 +29,13 @@ const name = localStorage.getItem("userName");
 
   return (
     <div className="app-header ">
-      <div className="header-root d-flex align-items-center ms-auto">
+      <button
+        className="btn p-0 d-lg-none me-3" 
+        onClick={toggleSidebar}
+      >
+        <RiMenuFold2Fill size={22} />
+      </button>
+      <div className="header-root d-flex align-items-center ms-auto ">
         <div
           className="profile-container"
           onMouseEnter={handleMouseEnter}
@@ -40,6 +48,7 @@ const name = localStorage.getItem("userName");
                 src={profilePic}
                 alt="Profile"
                 className="header-profile-pic"
+                loading="eager"
               />
             ) : (
               <CgProfile size={30} />

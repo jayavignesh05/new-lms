@@ -2,11 +2,17 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { NavLink, useLocation } from "react-router-dom";
 import "./sidebar.css";
-import caddCentreLogo from "../assets/caddcentre.svg";
+import caddCentreLogo from "../assets/caddcentre.png";
 import { VscHome } from "react-icons/vsc";
 import { LuGraduationCap } from "react-icons/lu";
 import { BsPerson, BsTelephone, BsSuitcaseLg } from "react-icons/bs";
-import { MdOutlinePrivacyTip, MdScience } from "react-icons/md";
+import {
+  MdOutlinePrivacyTip,
+  MdScience,
+  MdMenu,
+  MdClose,
+} from "react-icons/md";
+import { RiMenuFold2Fill, RiMenuFoldFill } from "react-icons/ri";
 
 export default function Sidebar({ isSidebarOpen, toggleSidebar }) {
   const [appVersion, setAppVersion] = useState([]);
@@ -16,7 +22,7 @@ export default function Sidebar({ isSidebarOpen, toggleSidebar }) {
     const fetchSidebarData = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:7000/api/side/sidebar"
+          "https://9kz24kbm-7000.inc1.devtunnels.ms/api/side/sidebar"
         );
         // Add the new "Test" item to the list from the API
         const updatedNavItems = [
@@ -50,26 +56,47 @@ export default function Sidebar({ isSidebarOpen, toggleSidebar }) {
     }
     return null;
   };
-
+  const handleLinkClick = () => {
+    if (window.innerWidth <= 992) {
+      toggleSidebar();
+    }
+  };
   return (
     <>
       <div
-        className={`leftside d-flex flex-column vh-100 bg-white border-end position-fixed top-0 start-0 ${
-          isSidebarOpen ? "open" : ""
+        className={`leftside d-flex flex-column vh-100 bg-white border-end ${
+          isSidebarOpen ? "open" : "collapsed"
         }`}
       >
-        <div className="top-left d-flex justify-content-center align-items-center border-bottom ">
-          <img src={caddCentreLogo} alt="CADD Centre Logo" />
+        <div className="top-left d-flex align-items-center border-bottom p-3 justify-center">
+          {isSidebarOpen && (
+            <img src={caddCentreLogo} alt="CADD Centre Logo" loading="eager" />
+          )}
+          <button
+            className={`btn p-0  ${
+              isSidebarOpen ? "ms-auto position-relative right-2" : "mx-auto"
+            }`}
+            onClick={toggleSidebar}
+          >
+            {isSidebarOpen ? (
+              <RiMenuFoldFill size={22} />
+            ) : (
+              <RiMenuFold2Fill size={22} />
+            )}
+          </button>
         </div>
-        <div className="bottom-left flex-grow-1 overflow-auto">
+        <div className="bottom-left  overflow-auto">
           <ul className="list-unstyled p-2 d-flex flex-column gap-2">
             {appVersion.map((item) => (
               <li key={item.id}>
                 <NavLink
                   className={({ isActive }) => {
                     let finalIsActive = isActive;
-                    // Make "My Courses" active for both "/" and "/home"
-                    if (item.name === "My Courses" && (location.pathname === "/" || location.pathname === "/home")) {
+                    if (
+                      item.name === "My Courses" &&
+                      (location.pathname === "/" ||
+                        location.pathname === "/home")
+                    ) {
                       finalIsActive = true;
                     }
                     if (
@@ -78,7 +105,6 @@ export default function Sidebar({ isSidebarOpen, toggleSidebar }) {
                     ) {
                       finalIsActive = true;
                     }
-                    // Using template literals to combine classes
                     return `sidebar-link d-flex align-items-center gap-3 p-3 rounded-3 text-decoration-none ${
                       finalIsActive ? "active" : ""
                     }`;
@@ -86,13 +112,12 @@ export default function Sidebar({ isSidebarOpen, toggleSidebar }) {
                   to={
                     item.name === "My Courses"
                       ? "/home"
-                      : `/${item.route.toLowerCase()}`}
-                  onClick={toggleSidebar}
+                      : `/${item.route.toLowerCase()}`
+                  }
+                  onClick={handleLinkClick}
                 >
-                  <span>
-                    {getIcons(item.name)}
-                  </span>
-                  <span>{item.name}</span>
+                  <span>{getIcons(item.name)}</span>
+                  <span className="sidebar-link-text">{item.name}</span>
                 </NavLink>
               </li>
             ))}

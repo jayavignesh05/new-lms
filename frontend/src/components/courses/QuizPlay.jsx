@@ -13,7 +13,7 @@ const QuizPlay = ({ courseId, onBack }) => {
   // NEW: State to track the current question number (0, 1, 2...)
   const [currentQIndex, setCurrentQIndex] = useState(0);
 
-  const base_api = "http://localhost:7000/api";
+  const base_api = "https://9kz24kbm-7000.inc1.devtunnels.ms/api";
 
   useEffect(() => {
     axios.get(`${base_api}/courses/quiz-questions/${courseId}`)
@@ -56,7 +56,7 @@ const QuizPlay = ({ courseId, onBack }) => {
   };
 
   if (loading) return <Spinner fullPage={false} />;
-  if (questions.length === 0) return <div className="p-4">No questions found.</div>;
+  if (questions.length === 0) return <div className="p">No questions found.</div>;
 
   // Logic to get only the ONE current question
   const currentQuestion = questions[currentQIndex];

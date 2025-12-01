@@ -148,7 +148,7 @@ body {
   .contact-info-section,
   .form-row {
     display: flex;
-    flex-direction: column;
+    align-items: center;
   }
   .contact-container {
     margin: auto;

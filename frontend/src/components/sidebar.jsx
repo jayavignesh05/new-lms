@@ -24,12 +24,7 @@ export default function Sidebar({ isSidebarOpen, toggleSidebar }) {
         const response = await axios.get(
           "https://9kz24kbm-7000.inc1.devtunnels.ms/api/side/sidebar"
         );
-        // Add the new "Test" item to the list from the API
-        const updatedNavItems = [
-          ...response.data,
-          { id: 99, name: "Test", route: "test" },
-        ];
-        setAppVersion(updatedNavItems);
+        setAppVersion(response.data);
       } catch (error) {
         console.error("Failed to fetch sidebar data:", error);
       }

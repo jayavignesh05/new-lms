@@ -14,6 +14,7 @@ import ProtectedRoute from "../components/proctedrouter";
 import TestPage from '../pages/TestPage';
 import HistoryPage from "../pages/HistoryPage";
 import Jobs from "../pages/Jobs";
+import JobDetails from "../components/jobs/JobDetails"; 
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route path="/assessment-history" element={<HistoryPage />} />
           <Route path="/test" element={<TestPage />} />
           <Route path="/jobs" element={<Jobs />} />
+          <Route path="/jobs/:id" element={<JobDetails />} />
         </Route>
       </Route>
     </Routes>

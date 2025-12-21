@@ -12,9 +12,9 @@ app.use(express.urlencoded({ extended: true, limit: "10mb" }));
 
 // 2. Enable CORS with Specific Origins (More Secure & Reliable)
 const allowedOrigins = [
-  "https://students-learning-web.vercel.app", // Your Production Frontend
-  "http://localhost:5173",                    // Your Vite Localhost
-  "http://localhost:7000"                     // Alternative Localhost
+  "https://students-learning-web.vercel.app",
+  "http://localhost:5173",  
+  "http://localhost:7000"                    
 ];
 
 app.use(cors({
